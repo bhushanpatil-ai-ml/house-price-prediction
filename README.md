@@ -163,10 +163,9 @@ RMSE     : ~136,000
 
 The trained model generates a **feature importance visualization** showing the most influential housing features affecting price predictions.
 
-Saved in:
+The model identifies the most influential features affecting house prices.
 
-```
-outputs/feature_importance.png
+![Feature Importance](outputs/feature_importance.png)
 ```
 
 ---
