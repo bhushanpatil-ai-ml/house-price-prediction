@@ -1,249 +1,222 @@
-# House Price Prediction – Advanced Machine Learning Regression Pipeline
+# 🏠 House Price Prediction – Advanced Machine Learning Regression Pipeline
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue)
-![Machine Learning](https://img.shields.io/badge/Machine-Learning-green)
-![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-orange)
-![XGBoost](https://img.shields.io/badge/XGBoost-red)
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Regression-green)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-orange)
+![XGBoost](https://img.shields.io/badge/XGBoost-Boosting-red)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-An end-to-end machine learning regression pipeline for predicting house prices using property-related features.
+---
 
-This project builds a complete machine learning workflow including data preprocessing, exploratory data analysis, outlier handling, log transformation, model comparison, cross-validation, hyperparameter tuning, and final model evaluation.
+# 📌 Project Overview
+
+This project builds an **end-to-end machine learning pipeline** to predict **house prices** using property-related features.
+
+The pipeline includes:
+
+• Data preprocessing
+• Exploratory Data Analysis (EDA)
+• Feature engineering
+• Model training and comparison
+• Hyperparameter tuning
+• Model evaluation
+• Feature importance visualization
+
+The goal is to create a **robust regression model capable of accurately predicting housing prices**.
 
 ---
 
-## Table of Contents
+# 🎯 Problem Statement
 
-- Problem Statement  
-- Objective  
-- Dataset  
-- Technologies Used  
-- Machine Learning Models  
-- Project Workflow  
-- Evaluation Metrics  
-- Model Performance  
-- Feature Importance  
-- Project Structure  
-- Results  
-- How to Run the Project  
-- Future Improvements  
-- Author  
+Accurate house price prediction is crucial for:
+
+* Real estate investors
+* Home buyers
+* Property valuation systems
+* Real estate analytics platforms
+
+This project aims to build a **machine learning regression pipeline** that predicts housing prices based on property characteristics.
 
 ---
 
-## Problem Statement
+# 📊 Dataset
 
-Accurately predicting house prices is a fundamental problem in real estate analytics.
+The dataset contains housing features such as:
 
-Housing prices depend on multiple factors such as:
+* Area / square footage
+* Number of bedrooms
+* Number of bathrooms
+* Floors
+* Waterfront property
+* Condition and grade
+* Location related attributes
+* House age
 
-- number of bedrooms
-- number of bathrooms
-- living area
-- property grade
-- location attributes
-- construction year
+Target variable:
 
-The challenge is to build a regression model that captures the relationships between these features and accurately predicts property prices.
-
----
-
-## Objective
-
-The main objectives of this project are:
-
-- Build a complete regression pipeline for house price prediction
-- Perform exploratory data analysis and feature analysis
-- Detect and remove outliers using IQR
-- Apply log transformation to improve target distribution
-- Train multiple regression models
-- Compare model performance
-- Tune hyperparameters using GridSearchCV
-- Save the final trained model
-
----
-
-## Dataset
-
-The dataset used in this project is the **House Sales Dataset**.
-
-Dataset Source  
-https://www.kaggle.com/datasets/harlfoxem/housesalesprediction
-
-Dataset Characteristics
-
-- Number of houses: 21,613
-- Multiple property attributes
-- Real estate pricing dataset
-
-Target Variable
-
+```
 price
+```
 
 ---
 
-## Technologies Used
+# 🛠 Technologies Used
 
-### Programming
-Python
-
-### Data Science Libraries
-
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-
-### Machine Learning
-
-- Scikit-learn
-- XGBoost
-
-### Tools
-
-- Git
-- GitHub
-- Joblib
+* Python
+* Pandas
+* NumPy
+* Scikit-Learn
+* XGBoost
+* Matplotlib
+* Seaborn
+* Joblib
 
 ---
 
-## Machine Learning Models
+# 📂 Project Structure
 
-This project compares multiple regression algorithms:
-
-- Linear Regression (Baseline Model)
-- Random Forest Regressor
-- XGBoost Regressor
-
-XGBoost generally performs best for tabular datasets.
-
----
-
-## Project Workflow
-
-1. Data Loading  
-2. Exploratory Data Analysis (EDA)  
-3. Correlation Analysis  
-4. Removing unnecessary columns  
-5. Outlier detection and removal using IQR  
-6. Log transformation of target variable  
-7. Feature and target separation  
-8. Train-test split  
-9. Model training  
-10. Model evaluation  
-11. Cross-validation  
-12. Hyperparameter tuning using GridSearchCV  
-13. Feature importance analysis  
-14. Final tuned model saving  
-
----
-
-## Evaluation Metrics
-
-Regression models are evaluated using:
-
-- R² Score
-- Mean Absolute Error (MAE)
-- Root Mean Squared Error (RMSE)
-
-These metrics help measure prediction accuracy.
-
----
-
-## Model Performance
-
-| Model | R² Score |
-|------|---------|
-| Linear Regression | ~0.70 |
-| Random Forest | ~0.85 |
-| XGBoost | ~0.88 |
-
-After hyperparameter tuning, the **XGBoost model achieved the best performance**.
-
----
-
-## Feature Importance
-
-The model identifies the most important features influencing house prices.
-
-Top features typically include:
-
-- sqft_living
-- grade
-- bathrooms
-- view
-- sqft_above
-
-Feature importance visualization:
-
-outputs/feature_importance.png
-
----
-
-## Project Structure
-
+```
 house-price-prediction/
 
-├── data/  
-│   └── housing.csv  
-
-├── models/  
-│   ├── best_house_price_model.pkl  
-│   └── tuned_house_price_model.pkl  
-
-├── notebooks/  
-│   └── eda.ipynb  
-
-├── outputs/  
-│   └── feature_importance.png  
-
-├── src/  
-│   ├── data_preprocessing.py  
-│   ├── train_model.py  
-│   └── evaluate_model.py  
-
-├── .gitignore  
-├── README.md  
-└── requirements.txt  
-
----
-
-## Results
-
-The regression pipeline successfully predicts housing prices with high accuracy.
-
-The tuned **XGBoost model outperforms baseline models**, achieving strong predictive performance after feature engineering and hyperparameter tuning.
+│
+├── data/                      # Dataset folder (housing.csv)
+│
+├── models/                    # Saved trained models
+│   ├── best_house_price_model.pkl
+│   └── tuned_house_price_model.pkl
+│
+├── outputs/                   # Visual outputs
+│   └── feature_importance.png
+│
+├── notebooks/                 # Exploratory analysis
+│   └── eda.ipynb
+│
+├── src/                       # Source code
+│   ├── data_preprocessing.py
+│   ├── train_model.py
+│   └── evaluate_model.py
+│
+├── requirements.txt           # Project dependencies
+└── README.md                  # Project documentation
+```
 
 ---
 
-## How to Run the Project
+# 🔎 Exploratory Data Analysis
 
-Install dependencies
+The EDA notebook includes:
 
+* Data inspection
+* Missing value analysis
+* Statistical summary
+* Feature correlation analysis
+* Price distribution visualization
+* Correlation heatmap
+
+---
+
+# 🤖 Machine Learning Models
+
+Three regression models were trained and compared:
+
+### 1️⃣ Linear Regression
+
+Baseline regression model.
+
+### 2️⃣ Random Forest Regressor
+
+Handles nonlinear relationships and feature interactions.
+
+### 3️⃣ XGBoost Regressor
+
+Gradient boosting model providing the best performance.
+
+---
+
+# 📈 Model Evaluation Metrics
+
+The models were evaluated using:
+
+* **R² Score**
+* **Mean Absolute Error (MAE)**
+* **Root Mean Squared Error (RMSE)**
+
+These metrics help measure the accuracy and error of price predictions.
+
+---
+
+# 🏆 Best Model
+
+The **XGBoost Regressor** achieved the best performance.
+
+Example evaluation:
+
+```
+R² Score : 0.87
+MAE      : ~70,000
+RMSE     : ~136,000
+```
+
+---
+
+# 📊 Feature Importance
+
+The trained model generates a **feature importance visualization** showing the most influential housing features affecting price predictions.
+
+Saved in:
+
+```
+outputs/feature_importance.png
+```
+
+---
+
+# ⚙️ Installation
+
+Clone the repository:
+
+```
+git clone https://github.com/YOUR_USERNAME/house-price-prediction.git
+cd house-price-prediction
+```
+
+Install dependencies:
+
+```
 pip install -r requirements.txt
+```
 
-Train the model
+---
 
+# ▶️ Running the Project
+
+Train the models:
+
+```
 python src/train_model.py
+```
 
-Evaluate the model
+Evaluate the model:
 
+```
 python src/evaluate_model.py
+```
 
 ---
 
-## Future Improvements
+# 🚀 Future Improvements
 
-- Add feature scaling
-- Implement advanced feature engineering
-- Deploy prediction API using FastAPI
-- Build interactive UI using Streamlit
-- Add experiment tracking using MLflow
+* Advanced feature engineering
+* Hyperparameter optimization using GridSearch / Optuna
+* Deployment using Flask / FastAPI
+* Model monitoring pipeline
+* Docker containerization
 
 ---
 
-## Author
+# 👨‍💻 Author
 
-Bhushan Patil  
-AI / Machine Learning Engineer  
-Pune, Maharashtra, India
+**Bhushan Patil**
+
+AI / Machine Learning Engineer
+Pune, Maharashtra, INDIA
