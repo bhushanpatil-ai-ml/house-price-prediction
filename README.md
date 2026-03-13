@@ -156,9 +156,19 @@ R² Score : 0.87
 MAE      : ~70,000
 RMSE     : ~136,000
 ```
+## 📊 Model Performance
+
+The models were evaluated using R² Score, MAE, and RMSE.
+
+| Model | R² Score |
+|------|---------|
+| Linear Regression | ~0.70 |
+| Random Forest | ~0.85 |
+| XGBoost | ~0.87 |
+
+The **XGBoost Regressor** achieved the best performance and was selected as the final model.
 
 ---
-
 
 # 📊 Feature Importance
 
